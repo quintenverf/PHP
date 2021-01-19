@@ -1,34 +1,29 @@
-<?php
-
-
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title> PHP opdr in html</title>
+    <title>PHP opdracht 4</title>
+    <style>
+        .rood {
+            border: 5px solid red;
+        }
+        .groen {
+            border: 5px solid green;
+        }
+    </style>
 </head>
 <body>
 <?php
-//for ($i = 1; $i<=9; $i++) {
-////    echo "<img src='img/foto". $i .".jpg>'>";
-////}
-////
-////echo "de afbeeldingen showen niet";
-
-$bomen = array("boompie.jpg", "boompje.jpg", "downlaod.jfif", "kaBoom.jpg");
-
-foreach ($bomen as $boom) {
-    echo "<img src='img/bomen/".$boom."'>";
+$class = "";
+for ($i = 1; $i <= 7; $i++) {
+    if ($i % 2 == 0) {
+        $class = "class='rood'";
+    }
+    else {
+        $class = "class='groen'";
+    }
+    echo "<img ".$class." src='img/bomen/boom" . $i . ".jpg'>";
 }
-
-//      een while loop
-//$i = 1;
-//while ($i<=9) {
-//echo "<img src='img/bomen/".$boom."'>";
-//    $i++;
-//}
 ?>
-<!--<img src="img/foto1.jpg">-->
+
 </body>
 </html>
