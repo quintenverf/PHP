@@ -22,6 +22,12 @@ foreach ($bomen as $boom) {
     echo "<img src='img/bomen/".$boom."'>";
 }
 
+//      een while loop
+//$i = 1;
+//while ($i<=9) {
+//echo "<img src='img/bomen/".$boom."'>";
+//    $i++;
+//}
 ?>
 <!--<img src="img/foto1.jpg">-->
 </body>
