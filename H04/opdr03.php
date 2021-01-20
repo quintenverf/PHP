@@ -2,14 +2,11 @@
 
 function delenDoorDrie ($delen) {
     if ($delen % 3 == 0) {
-        $deelbaar = true;
-        echo "ja het kan";
+        return "ja het kan";
     } else {
-        $deelbaar = false;
-        echo "nee het kan niet";
+        return "nee het kan niet";
     }
-    return $deelbaar;
 }
 
-echo delenDoorDrie(4);
+echo delenDoorDrie(3);
 
