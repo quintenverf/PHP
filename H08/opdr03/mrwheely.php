@@ -9,7 +9,7 @@ $thisOverview->setOverviewName('OccasionCenter');
 $volksWagen = new Car('volksWagen', 'polo', 13500.00, "img/VW-polo01.jpg");
 $mercedes = new Car('mercedes', 'sls', 225500.00, "img/mercedes-sls01.jpg");
 $ferrari = new Car('ferrari', 'énzo', 2000000.00, "img/ferrari-enzo01.jpg");
-$opel = new Car('opel', 'corsa', 13500.00, 'img/opel-corsa01.jpg');
+$opel = new Car('opel', 'corsa', 13500.00, 'img/opel-corsa.jpg');
 $audi = new Car('audi', 'rs8', 110000.00, 'img/audi-rs801.jpg');
 
 $thisOverview->AddCar($volksWagen);
@@ -100,8 +100,8 @@ function alleAutos($overview){
     <title>mrwheely</title>
     <link rel="stylesheet" type="text/css" href="mrwheely.css">
 </head>
-<body>
-
+<body id="wrapper">
+<div>
 <header>
 <img id='header-image' src="img/wheely_header.jpg" alt="header van de pagina">
 </header>
@@ -128,7 +128,7 @@ function alleAutos($overview){
         <input type="submit" value="Submit" name="knop">
     </form>
 </div>
-
+</div>
 <?php
 //button
 
