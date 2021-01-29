@@ -4,8 +4,8 @@ class OverviewCar{
     private $OverviewName = "";
     private $Cars = array();
 
-    function AddCar($Car) {
-        $this->Cars[] = $Car;
+    function AddCar($car) {
+        $this->Cars[] = $car;
     }
 
     function getCars() {
