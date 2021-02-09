@@ -1,21 +1,31 @@
 <?php
+
+include_once ('brood.php');
+include_once ('Broodlijst.php');
+
 session_start();
+if (isset($_SESSION['user'])){
+
+}else {
+    header('Location: login.php');
+}
+
 
 if (isset($_GET["loguit"])) {
     $_SESSION = array();
     session_destroy();
 }
 
-include_once ('overzicht.php');
-include_once ('brood.php');
 
-$wimoverzicht = new overzichtBroodjes();
-$wimoverzicht->setOverzichtNaam('BakkerijWimVlecht');
-$broodjesArray = array();
+$wimoverzicht = new Broodlijst();
+
+if (empty($_SESSION['Broodlijst'])) {
+    $_SESSION['Broodlijst'] = $wimoverzicht;
+}
 
 if (isset($_POST['knop-toevoegen'])) {
     $_POST['naam'] = new broodje($_POST['naam'], $_POST['meel'], $_POST['vorm'], $_POST['gewicht']);
-    $wimoverzicht->voegBroodjeToe($_POST['naam']);
+    $_SESSION['Broodlijst']->voegBroodjeToe($_POST['naam']);
 }
 
 ?>
@@ -50,15 +60,24 @@ if (isset($_POST['knop-toevoegen'])) {
             <th>Meel:</th>
             <th>Vorm:</th>
             <th>Gewicht:</th>
+            <th> </th>
         </tr>
-        <?php
-        foreach ($wimoverzicht->getBroodjes() as $broodje) {
-            echo "<td>" . $broodje->getNaam() . "</td>
-                  <td>" . $broodje->getMeel() . "</td>
+
+            <?php
+            foreach ($_SESSION['Broodlijst']->getBroodjes()
+            as $broodje) {
+                echo "<tr><td>" . $broodje->getNaam() . "</td>
+                  <td>" . $broodje->getMeel() . "</td>  
                   <td>" . $broodje->getVorm() . "</td>
-                  <td>" . $broodje->getGewicht() . "</td>";
-        }
-        ?>
+                  <td>" . $broodje->getGewicht() . "</td>
+                  <td> <a href='edit.php?data=".$broodje->getNaam()."'>edit</a> </td></tr>";
+            }
+            function editBroodje ($broodjesNaam) {
+                $_SESSION['onthoudenNaam'] = $broodjesNaam;
+                header("Location: admin.php");
+            }
+            ?>
+
     </table>
 </section>
 
@@ -67,9 +86,4 @@ if (isset($_POST['knop-toevoegen'])) {
 </html>
 
 
-<!--<form action="gegevens.php" method="post">-->
-<!--    Email      <input type="email" name="email"><br>-->
-<!--    Wachtwoord <input type="password" name="wachtwoord"><br>-->
-<!--    <input type="submit" name="knop" value="login">-->
-<!--</form>-->
 

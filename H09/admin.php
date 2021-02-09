@@ -12,12 +12,12 @@ if (isset($_SESSION["user"])) {
     header('location: login.php');
 }
 
-include_once ('overzicht.php');
 include_once ('brood.php');
+include_once ('Broodlijst.php');
 
 ?>
 
-<<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">

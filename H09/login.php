@@ -18,9 +18,9 @@ if (isset($_POST['knop'])
         'pwd' => $users[$_POST['email']]['pwd'],
         'rol' => $users[$_POST['email']]['rol'],
     );
-    $message = "welkom" . $_SESSION["user"]["email"];
+    $message = "Welkom " . $_SESSION["user"]["email"];
 } else {
-    $message = "inloggen";
+    $message = "Inloggen";
 }
 ?>
 
@@ -47,14 +47,14 @@ if (isset($_POST['knop'])
     </uL>
 </nav>
 
-<H1><?php $message ?></H1>
+<H1><?php echo  $message ?></H1>
 <div id="form-menu">
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
         <label for="email">Email</label>
         <input type="email" id="email" name="email" placeholder="your Email...">
 
         <label for="password"> password</label>
-        <input type="password" id="password" name="password" placeholder="your password...">
+        <input type="password" id="pwd" name="pwd" placeholder="your password...">
 
         <input type="submit" value="submit" name="knop">
     </form>
