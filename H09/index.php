@@ -27,6 +27,21 @@ if (isset($_POST['knop-toevoegen'])) {
     $_POST['naam'] = new broodje($_POST['naam'], $_POST['meel'], $_POST['vorm'], $_POST['gewicht']);
     $_SESSION['Broodlijst']->voegBroodjeToe($_POST['naam']);
 }
+if (isset($_POST['pas-Naam-Aan'])) {
+    $_SESSION['Broodlijst']->pasNaamAan($_POST['oudNaam'],$_POST['pasNaamAan']);
+}
+
+if (isset($_POST['pas-Meel-Aan'])) {
+    $_SESSION['Broodlijst']->pasMeelAan($_POST['oudNaam'],$_POST['pasMeelAan']);
+}
+
+if (isset($_POST['pas-Vorm-Aan'])) {
+    $_SESSION['Broodlijst']->pasVormAan($_POST['oudNaam'],$_POST['pasVormAan']);
+}
+
+if (isset($_POST['pas-Gewicht-Aan'])) {
+    $_SESSION['Broodlijst']->pasGewichtAan($_POST['oudNaam'],$_POST['pasGewichtAan']);
+}
 
 ?>
 
@@ -74,7 +89,7 @@ if (isset($_POST['knop-toevoegen'])) {
             }
             function editBroodje ($broodjesNaam) {
                 $_SESSION['onthoudenNaam'] = $broodjesNaam;
-                header("Location: admin.php");
+                header("Location: index.php");
             }
             ?>
 

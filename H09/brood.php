@@ -84,6 +84,7 @@ class broodje {
     {
         $this->gewicht = $gewicht;
     }
+    
 
 
 }
