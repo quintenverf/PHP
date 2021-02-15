@@ -4,13 +4,15 @@ class broodje {
     private $meel;
     private $vorm;
     private $gewicht;
+    private $baktijd;
 
-    function __construct($naam, $meel, $vorm, $gewicht)
+    function __construct($naam, $meel, $vorm, $gewicht, $baktijd)
     {
         $this->naam = $naam;
         $this->meel = $meel;
         $this->vorm = $vorm;
         $this->gewicht = $gewicht;
+        $this->baktijd = $baktijd;
     }
 
     /**
@@ -84,7 +86,25 @@ class broodje {
     {
         $this->gewicht = $gewicht;
     }
-    
+
+    /**
+     * Gets value of baktijd
+     * @return mixed
+     */
+    public function getBaktijd()
+    {
+        return $this->baktijd;
+    }
+
+    /**
+     * Sets value of gewicht
+     * @param mixed $baktijd
+     */
+    public function setBaktijd($baktijd)
+    {
+        $this->baktijd = $baktijd;
+    }
+
 
 
 }

@@ -54,5 +54,13 @@ class Broodlijst{
             }
         }
     }
+    function pasBaktijdAan($naam, $nieuwBaktijd)
+    {
+        foreach ($this->broodjes as $broodje) {
+            if ($broodje->getNaam()==$naam){
+                $broodje->setBaktijd($nieuwBaktijd);
+            }
+        }
+    }
 
 }

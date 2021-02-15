@@ -56,6 +56,9 @@ include_once ('Broodlijst.php');
         <label for="gewicht">gewicht</label>
         <input type="text" id="gewicht" name="gewicht" placeholder="Gewicht.." required>
 
+        <label for="baktijd">baktijd</label>
+        <input type="text" id="baktijd" name="baktijd" placeholder="Baktijd.." required>
+
 
         <input type="submit" value="submit" name="knop-toevoegen">
     </form>

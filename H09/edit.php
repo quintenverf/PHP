@@ -61,6 +61,13 @@ session_start();
         <input type="submit" value="submit" name="pas-Gewicht-Aan">
     </form>
 
+    <form action="index.php" method="post">
+        <label for="pasBaktijdAan">baktijd: <?php  echo $_SESSION['Broodlijst']->getBroodje($_GET['data'])->getBaktijd() ?></label>
+        <input type="text" id="nieuwBaktijd" name="pasBaktijdAan" placeholder="pasBaktijdAan.." required>
+        <?php echo '<input type="hidden" id="oudNaam" name="oudNaam" value="'. $_GET['data'].'">'?>
+        <input type="submit" value="submit" name="pas-Baktijd-Aan">
+    </form>
+
 
 </div>
 

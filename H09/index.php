@@ -24,7 +24,7 @@ if (empty($_SESSION['Broodlijst'])) {
 }
 
 if (isset($_POST['knop-toevoegen'])) {
-    $_POST['naam'] = new broodje($_POST['naam'], $_POST['meel'], $_POST['vorm'], $_POST['gewicht']);
+    $_POST['naam'] = new broodje($_POST['naam'], $_POST['meel'], $_POST['vorm'], $_POST['gewicht'], $_POST['baktijd']);
     $_SESSION['Broodlijst']->voegBroodjeToe($_POST['naam']);
 }
 if (isset($_POST['pas-Naam-Aan'])) {
@@ -41,6 +41,10 @@ if (isset($_POST['pas-Vorm-Aan'])) {
 
 if (isset($_POST['pas-Gewicht-Aan'])) {
     $_SESSION['Broodlijst']->pasGewichtAan($_POST['oudNaam'],$_POST['pasGewichtAan']);
+}
+
+if (isset($_POST['pas-Baktijd-Aan'])) {
+    $_SESSION['Broodlijst']->pasBaktijdAan($_POST['oudNaam'],$_POST['pasBaktijdAan']);
 }
 
 ?>
@@ -75,6 +79,7 @@ if (isset($_POST['pas-Gewicht-Aan'])) {
             <th>Meel:</th>
             <th>Vorm:</th>
             <th>Gewicht:</th>
+            <th>Baktijd:</th>
             <th> </th>
         </tr>
 
@@ -85,6 +90,7 @@ if (isset($_POST['pas-Gewicht-Aan'])) {
                   <td>" . $broodje->getMeel() . "</td>  
                   <td>" . $broodje->getVorm() . "</td>
                   <td>" . $broodje->getGewicht() . "</td>
+                  <td>" . $broodje->getBaktijd() . "</td>
                   <td> <a href='edit.php?data=".$broodje->getNaam()."'>edit</a> </td></tr>";
             }
             function editBroodje ($broodjesNaam) {
