@@ -71,7 +71,21 @@ input[type=submit] {
     cursor: pointer;
 }
 
+input[type=button] {
+    background-color: #b3b3cc;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
 input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+input[type=button]:hover {
     background-color: #45a049;
 }
 
@@ -79,4 +93,35 @@ div#form {
     border-radius: 5px;
     padding: 20px;
     text-align: left;
+}
+
+
+
+
+ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+li {
+    background-color: #290a08;
+    padding: 10px;
+    padding-left: 20px;
+    border-top: 1px solid white;
+}
+
+li.login {
+    float: right;
+}
+
+
+li a {
+    color: grey;
+    text-decoration: none;
+    font-weight: 600;
+
+}
+
+li a.buttons:hover {
+    color: deeppink;
 }

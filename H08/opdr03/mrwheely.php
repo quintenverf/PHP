@@ -3,14 +3,15 @@
 include_once('OverviewCar.php');
 include_once('Car.php');
 
+
 $thisOverview = new OverviewCar();
 $thisOverview->setOverviewName('OccasionCenter');
 
 $volksWagen = new Car('volksWagen', 'polo', 13500.00, "img/VW-polo01.jpg");
-$mercedes = new Car('mercedes', 'sls', 225500.00, "img/mercedes-sls01.jpg");
-$ferrari = new Car('ferrari', 'énzo', 2000000.00, "img/ferrari-enzo01.jpg");
-$opel = new Car('opel', 'corsa', 13500.00, 'img/opel-corsa.jpg');
-$audi = new Car('audi', 'rs8', 110000.00, 'img/audi-rs801.jpg');
+$mercedes = new Car('mercedes', 'sls', 225500, "img/mercedes-sls01.jpg");
+$ferrari = new Car('ferrari', 'énzo', 2000000, "img/ferrari-enzo01.jpg");
+$opel = new Car('opel', 'corsa', 13500, 'img/opel-corsa.jpg');
+$audi = new Car('audi', 'rs8', 110000, 'img/audi-rs801.jpg');
 
 $thisOverview->AddCar($volksWagen);
 $thisOverview->AddCar($ferrari);
@@ -90,7 +91,7 @@ function alleAutos($overview){
 
 ?>
 
-<<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -99,12 +100,22 @@ function alleAutos($overview){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>mrwheely</title>
     <link rel="stylesheet" type="text/css" href="mrwheely.css">
+    <link rel="stylesheet" type="text/css" href="wimvlecht.css">
 </head>
 <body id="wrapper">
 <div>
 <header>
 <img id='header-image' src="img/wheely_header.jpg" alt="header van de pagina">
 </header>
+
+    <nav>
+        <ul>
+            <li> <a class="links" href="mrwheely.php">index</a> </li>
+            <li> <a class="links" href="toevoegen.php">Admin pagina</a> </li>
+            <li class="login"> <a href="index.php?loguit">Uitloggen</a></li>
+            <li class="login"> <a href="login.php">Inloggen</a> </li>
+        </ul>
+    </nav>
 
 <div id="form">
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
@@ -120,17 +131,29 @@ function alleAutos($overview){
         </select>
 
         <label for="form-minprijs">Minimale prijs:</label>
-        <input type="text" id="form-minprijs" name="minprijs">
+        <select id="form-minprijs" name="minprijs">
+            <option value="">--Alle minimum prijzen--</option>
+            <option value="minprijs">0</option>
+        </select>
 
         <label for="form-maxprijs">Maximale prijs:</label>
-        <input type="text" id="form-maxprijs" name="maxprijs">
+        <select id="form-maxprijs" name="maxprijs">
+            <option value="">--Alle maximum prijzen--</option>
+            <option value="maxprijs">13500</option>
+            <option value="maxprijs">110000</option>
+            <option value="maxprijs">225500</option>
+            <option value="maxprijs">2000000</option>
+        </select>
 
         <input type="submit" value="Submit" name="knop">
+
+        <a href="toevoegen.php">
+           <button type="button" value="button" name="toevoegen">toevoegen</button>
+        </a>
     </form>
 </div>
 </div>
 <?php
-//button
 
 if (isset($_POST['knop'])) {
 $merkInput = $_POST['merk'];
