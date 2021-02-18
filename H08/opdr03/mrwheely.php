@@ -3,11 +3,10 @@
 include_once('OverviewCar.php');
 include_once('Car.php');
 
-
 $thisOverview = new OverviewCar();
 $thisOverview->setOverviewName('OccasionCenter');
 
-$volksWagen = new Car('volksWagen', 'polo', 13500.00, "img/VW-polo01.jpg");
+$volksWagen = new Car('volksWagen', 'polo', 13500, "img/VW-polo01.jpg");
 $mercedes = new Car('mercedes', 'sls', 225500, "img/mercedes-sls01.jpg");
 $ferrari = new Car('ferrari', 'énzo', 2000000, "img/ferrari-enzo01.jpg");
 $opel = new Car('opel', 'corsa', 13500, 'img/opel-corsa.jpg');
@@ -110,7 +109,7 @@ function alleAutos($overview){
 
     <nav>
         <ul>
-            <li> <a class="links" href="mrwheely.php">index</a> </li>
+            <li> <a class="links"href="mrwheely.php">index</a> </li>
             <li> <a class="links" href="toevoegen.php">Admin pagina</a> </li>
             <li class="login"> <a href="index.php?loguit">Uitloggen</a></li>
             <li class="login"> <a href="login.php">Inloggen</a> </li>
@@ -145,8 +144,11 @@ function alleAutos($overview){
             <option value="maxprijs">2000000</option>
         </select>
 
-        <input type="submit" value="Submit" name="knop">
+        <label for="form-maxprijs">Maximale prijs:</label>
+        <input type="text" id="form-maxprijs" name="maxprijs">
 
+
+        <input type="submit" value="Submit" name="knop">
         <a href="toevoegen.php">
            <button type="button" value="button" name="toevoegen">toevoegen</button>
         </a>
