@@ -144,8 +144,8 @@ function alleAutos($overview){
             <option value="maxprijs">2000000</option>
         </select>
 
-        <label for="form-maxprijs">Maximale prijs:</label>
-        <input type="text" id="form-maxprijs" name="maxprijs">
+        <label for="form-maxprijs"></label>
+        <input type="hidden" id="form-maxprijs" name="maxprijs">
 
 
         <input type="submit" value="Submit" name="knop">
@@ -155,6 +155,9 @@ function alleAutos($overview){
     </form>
 </div>
 </div>
+<?php
+
+?>
 <?php
 
 if (isset($_POST['knop'])) {
