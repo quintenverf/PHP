@@ -99,7 +99,31 @@ switch ($total){
         echo '<p>$total is above 5</p>';
 }
 
-//challenge
+//figuring out even/odd with modulus
+$a = 5;
+if ($a % 2 == 0) {
+    echo "<p>$a is even.</p>";
+} else {
+    echo "<p>$a is odd.</p>";
+}
 
+$a = 15;
+$b = 5;
 
+echo ($a % $b == 0) ? "<p>$b is a factor of $a</p>" : "<p>$b is not a factor of $a</p>";
+
+echo -$a % 2;
+
+//challange
+
+$q = (14 + 82 - 32 / 2)** 2;
+$w = 18 * (3 / 6 - 9) * 10;
+$e = 5 * ((12 / 2) - (8 * 4) + (12 * 6));
+
+$output = array($q, $w, $e);
+
+echo '<pre>';
+print_r($output);
+var_dump($output);
+echo '<pre>';
 
