@@ -120,6 +120,7 @@ $q = (14 + 82 - 32 / 2)** 2;
 $w = 18 * (3 / 6 - 9) * 10;
 $e = 5 * ((12 / 2) - (8 * 4) + (12 * 6));
 
+
 $output = array($q, $w, $e);
 
 echo '<pre>';
@@ -127,3 +128,4 @@ print_r($output);
 var_dump($output);
 echo '<pre>';
 
+echo 3**2+5*2;
